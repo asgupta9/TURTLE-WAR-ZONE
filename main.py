@@ -113,7 +113,7 @@ def POSSIBLE_MOVES(board, player):
                 if can_jump([m, n], [m + 1, n], [m + 2, n], board) == True: moves.append([m, n, m + 2, n])
                 if can_jump([m, n], [m - 1, n ], [m - 2, n ], board) == True: moves.append([m, n, m - 2, n])
 
-    if True: #len(moves) == 0: # HERE IT CAN MOVE TO ANY DIRECTION
+    if player=='white' or len(moves)==0: #len(moves) == 0: # HERE IT CAN MOVE TO ANY DIRECTION
         # ...check for regular moves
         for m in range(8):
             for n in range(8):			#MOVE CHANGE
@@ -122,10 +122,10 @@ def POSSIBLE_MOVES(board, player):
                     if can_move([m, n], [m-1, n+1], board) == True: moves.append([m, n, m-1, n+1])
                     if can_move([m, n], [m+1, n-1], board) == True: moves.append([m, n, m+1, n-1])
                     if can_move([m, n], [m-1, n-1], board) == True: moves.append([m, n, m-1, n-1])
-                    if can_move([m, n], [m , n+1], board) == True: moves.append([m, n, m, n+1 ])
-                    if can_move([m, n], [m, n-1], board) == True: moves.append([m, n, m , n - 1])
-                    if can_move([m, n], [m -1, n], board) == True: moves.append([m, n, m - 1, n ])
-                    if can_move([m, n], [m + 1, n], board) == True: moves.append([m, n, m + 1, n])
+                    # if can_move([m, n], [m , n+1], board) == True: moves.append([m, n, m, n+1 ])
+                    # if can_move([m, n], [m, n-1], board) == True: moves.append([m, n, m , n - 1])
+                    # if can_move([m, n], [m -1, n], board) == True: moves.append([m, n, m - 1, n ])
+                    # if can_move([m, n], [m + 1, n], board) == True: moves.append([m, n, m + 1, n])
 
     return moves # return the list with available jumps or moves
 
