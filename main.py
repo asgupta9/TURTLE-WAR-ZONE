@@ -374,51 +374,51 @@ def negascout(board, ply, alpha, beta, player):
     ''' return alpha '''
     if ply == 0: best_move = (moves[i][0], moves[i][1]), (moves[i][2], moves[i][3]) # save the move
     return alpha
-
-''' http://en.wikipedia.org/wiki/Negamax '''
-''' function negamax(node, depth, alpha, beta) '''
-def negamax(board, ply, alpha, beta, player):
-    global best_move
-
-    # find out ply depth for player
-    ply_depth = 0
-    if player != 'black': ply_depth = white.ply_depth
-    else: ply_depth = black.ply_depth
-
-    end = end_game(board)
-
-    ''' if node is a terminal node or depth = 0 '''
-    if ply >= ply_depth or end[0] == 0 or end[1] == 0: # are we still playing?
-        ''' return the heuristic value of node '''
-        score = evaluate(board, player) # return evaluation of board as we have reached final ply or end state
-        return score
-
-    ''' else '''
-    ''' foreach child of node '''
-    moves = avail_moves(board, player) # get the available moves for player
-    for i in range(len(moves)):
-        # create a deep copy of the board (otherwise pieces would be just references)
-        new_board = deepcopy(board)
-        make_move((moves[i][0], moves[i][1]), (moves[i][2], moves[i][3]), new_board) # make move on new board
-
-        ''' alpha := max(alpha, -negamax(child, depth-1, -beta, -alpha)) '''
-        # ...make a switch of players
-        if player == 'black': player = 'white'
-        else: player = 'black'
-
-        temp_alpha = -negamax(new_board, ply+1, -beta, -alpha, player)
-        if temp_alpha >= alpha:
-            if ply == 0: best_move = (moves[i][0], moves[i][1]), (moves[i][2], moves[i][3]) # save the move
-            alpha = temp_alpha
-
-        ''' {the following if statement constitutes alpha-beta pruning} '''
-        ''' if alpha>=beta '''
-        if alpha >= beta:
-            ''' return beta '''
-            if ply == 0: best_move = (moves[i][0], moves[i][1]), (moves[i][2], moves[i][3]) # save the move
-            return beta
-    ''' return alpha '''
-    return alpha
+#
+# ''' http://en.wikipedia.org/wiki/Negamax '''
+# ''' function negamax(node, depth, alpha, beta) '''
+# def negamax(board, ply, alpha, beta, player):
+#     global best_move
+#
+#     # find out ply depth for player
+#     ply_depth = 0
+#     if player != 'black': ply_depth = white.ply_depth
+#     else: ply_depth = black.ply_depth
+#
+#     end = end_game(board)
+#
+#     ''' if node is a terminal node or depth = 0 '''
+#     if ply >= ply_depth or end[0] == 0 or end[1] == 0: # are we still playing?
+#         ''' return the heuristic value of node '''
+#         score = evaluate(board, player) # return evaluation of board as we have reached final ply or end state
+#         return score
+#
+#     ''' else '''
+#     ''' foreach child of node '''
+#     moves = avail_moves(board, player) # get the available moves for player
+#     for i in range(len(moves)):
+#         # create a deep copy of the board (otherwise pieces would be just references)
+#         new_board = deepcopy(board)
+#         make_move((moves[i][0], moves[i][1]), (moves[i][2], moves[i][3]), new_board) # make move on new board
+#
+#         ''' alpha := max(alpha, -negamax(child, depth-1, -beta, -alpha)) '''
+#         # ...make a switch of players
+#         if player == 'black': player = 'white'
+#         else: player = 'black'
+#
+#         temp_alpha = -negamax(new_board, ply+1, -beta, -alpha, player)
+#         if temp_alpha >= alpha:
+#             if ply == 0: best_move = (moves[i][0], moves[i][1]), (moves[i][2], moves[i][3]) # save the move
+#             alpha = temp_alpha
+#
+#         ''' {the following if statement constitutes alpha-beta pruning} '''
+#         ''' if alpha>=beta '''
+#         if alpha >= beta:
+#             ''' return beta '''
+#             if ply == 0: best_move = (moves[i][0], moves[i][1]), (moves[i][2], moves[i][3]) # save the move
+#             return beta
+#     ''' return alpha '''
+#     return alpha
 
 ''' http://www.ocf.berkeley.edu/~yosenl/extras/alphabeta/alphabeta.html '''
 ''' alpha-beta(player,board,alpha,beta) '''
@@ -708,5 +708,27 @@ while True: # main game loop
     # cpu play
     if turn != 'black' and white.type == 'cpu': cpu_play(white) # white cpu turn
     elif turn != 'white' and black.type == 'cpu': cpu_play(black) # black cpu turn
-
-clock.tick(fps) # saves cpu time
+clock.tick(fps)
+# part of the screen
+#     im=ImageGrab.grab(bbox=(1000,100,1400,600)) # X1,Y1,X2,Y2
+#     # im.show()
+#     im.save('1.png')
+#     #image to text
+    #     i= image_to_string(Image.open('1.png'))
+    #     print ("i "+i)
+    #     j=i.split("\n")
+    #     for k in range(0,len(j)):
+#         print j[k]
+#     ques=""
+#     ans1=""
+#     ans2=""
+#     ans3=""
+#     ans3=j[len(j)-1]
+#     ans2=j[len(j)-3]
+#     ans1=j[len(j)-5]
+#     for k in range(0,len(j)-5):
+#         ques+=j[k]+" "
+#     print ques, ans1,ans2,ans3
+#
+#     webbrowser.open("https://www.google.co.in/search?q="+ques, new=2)
+#    #
