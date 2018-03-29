@@ -18,10 +18,10 @@
       <file leaf-file-name="main.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="323" column="2" lean-forward="false" selection-start-line="323" selection-start-column="2" selection-end-line="323" selection-end-column="2" />
+            <state relative-caret-position="0">
+              <caret line="0" column="57" lean-forward="false" selection-start-line="0" selection-start-column="57" selection-end-line="0" selection-end-column="57" />
               <folding>
-                <element signature="e#47#60#0" expanded="true" />
+                <element signature="e#449#462#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -66,7 +66,12 @@
       <find>8</find>
       <find>pause</find>
       <find>end_g</find>
+      <find>game_ini</find>
+      <find>avail_moves</find>
     </findStrings>
+    <replaceStrings>
+      <replace>POSSIBLE_MOVES</replace>
+    </replaceStrings>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -303,7 +308,7 @@
         <state relative-caret-position="2730">
           <caret line="182" column="0" lean-forward="true" selection-start-line="182" selection-start-column="0" selection-end-line="182" selection-end-column="0" />
           <folding>
-            <element signature="e#47#60#0" expanded="true" />
+            <element signature="e#449#462#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -343,10 +348,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="323" column="2" lean-forward="false" selection-start-line="323" selection-start-column="2" selection-end-line="323" selection-end-column="2" />
+        <state relative-caret-position="0">
+          <caret line="0" column="57" lean-forward="false" selection-start-line="0" selection-start-column="57" selection-end-line="0" selection-end-column="57" />
           <folding>
-            <element signature="e#47#60#0" expanded="true" />
+            <element signature="e#449#462#0" expanded="true" />
           </folding>
         </state>
       </provider>
